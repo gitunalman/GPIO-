@@ -47,3 +47,14 @@ Esta sección define las principales siglas y abreviaturas utilizadas para la co
 
 
 
+#### Características Principales de los GPIO 
+
+* Estados de salida: Push-Pull, Open Drain + resistencia de Pull o Down, analógico.
+* Estados de entrada: flotante, Pull-Up, Pull-Down, analógica.
+* Velocidad de lectura/escritura seleccionable.
+* Bloqueo de GPIO.
+* Selección de funciones alternativas.
+* Tolerantes a 5v.
+* Casi todos los GPIO de la serie STM32 pueden ser configurados como fuente de interrupción externa.
+
+
