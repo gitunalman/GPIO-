@@ -2,9 +2,16 @@
 
 El pin de entrada / salida de uso general del microcontrolador STM32 (GPIO) proporciona muchas formas de interactuar con circuitos externos dentro de un marco de aplicación.
 
-
-
 En este documento daremos una breve explicación de su uso y configuración.
+
+#### Estructura basica de un GPIO en un microcontrolador SMT32F4 (Similar al STM32L476)
+<img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO1.png" />
+
+En la imagen anterior se muestra la estructura interna de un GPIO. En el recuadro Azul se muestran las posibles configuraciones de entrada, en el rojo las posibles configuraciones de salida y el recuadro verde muestra las configuraciones disponibles para las resistencias de Pull.
+
+
+
+
 
 #### Glosario:
 Esta sección define las principales siglas y abreviaturas utilizadas para la configuración de las entradas/salidas GPIO.
@@ -56,5 +63,82 @@ Esta sección define las principales siglas y abreviaturas utilizadas para la co
 * Selección de funciones alternativas.
 * Tolerantes a 5v.
 * Casi todos los GPIO de la serie STM32 pueden ser configurados como fuente de interrupción externa.
+
+
+
+#### Configuración de entrada digital
+<img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO2.png" />
+
+El buffer de salida es deshabilitado cuando el GPIO es configurado como entrada:
+
+* La entrada Schmitt Trigger es activada.
+* Las resistencias de Pull-Up o Pull-Down están disponibles para ser activadas.
+* El dato presente en el puerto puede ser leído y es muestreado tan rápido como la velocidad del puerto sea configurada.
+
+
+#### Configuración de salida digital
+<img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO2.png" />
+
+Cuando el GPIO es configurado como salida:
+
+* El buffer de salida es habilitado.
+* Modo Open-Drain:
+* Un “0” en el registro de salida activa el N-MOS
+* Un “1”En el registro de salida deja el puerto en alta impedancia (el P-MOS nunca se activa).
+* Modo Push-Pull:
+* Un “0” en el registro de salida activa el N-MOS mientras
+* Un “1” en el registro de salida activa el P-MOS
+* La entrada Schmitt Trigger es activada.
+* Las resistencias de Pull-Up o Pull-Down están disponibles para ser activadas.
+* Se puede leer el valor presente en el GPIO.
+* Se puede leer el último valor escrito en el GPIO.
+* El dato presente en el puerto puede ser leído y es muestreado tan rápido como la velocidad del puerto sea configurada.
+
+#### Configuración de función alternativa
+<img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO4.png" />
+
+Cuando el GPIO es configurado como una función alternativa:
+
+* El buffer de salida puede ser configurado como Open-Drain o como Push-Pull.
+* El buffer de salida es controlado por la señal proveniente del periférico seleccionado.
+* La entrada Schmitt Trigger es activada.
+* Las resistencias de Pull-Up o Pull-Down están disponibles para ser activadas.
+* Se puede leer el valor presente en el GPIO.
+* El dato presente en el puerto puede ser leído y es muestreado tan rápido como la velocidad del puerto sea configurada.
+
+#### Configuración analógica
+<img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO5.png" />
+
+Cuando el GPIO es configurado como analógico:
+
+* El buffer de salida es deshabilitado.
+* La entrada Schmitt Trigger es desactivada, y se fuerza un valor de “0” a la salida.
+* Las resistencias de Pull-Up o Pull-Down están deshabilitadas.
+* Si se intenta leer el registro de entrada siempre se obtendrá un valor de “0”.
+* Además de leer valores analógicos algunos GPIO permiten escribir valores analógicos a la salida del pin.
+ Nota: En configuración analógica el GPIO no es tolerante a 5v, el máximo voltaje soportado es de 3.3v.
+
+
+
+
+
+
+
+
+#### Selección de velocidad de un GPIO
+La arquitectura interna de los GPIO de los microcontroladores de la serie STM32F4 permite configurar la velocidad de lectura o escritura, con la finalidad de tomar mayor control sobre el ruido eléctrico generado por dicho dispositivo.
+
+Las configuraciones de velocidades se enlistan a continuación:
+* Low Speed.
+* Medium Speed.
+* High Speed.Very High Speed.
+
+Dependiendo de la aplicación de cada dispositivo debe ser seleccionada dicha velocidad.
+
+
+<img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO6.png" />
+
+Como se puede observar en la ilustración anterior, los puertos GPIO pertenecen al bus de datos AHB1, que alcanza una frecuencia superior a 84 Mhz, pero si el puerto está configurado con una función alternativa que se encuentre en el bus APB1, alcanzara una frecuencia de 48 Mhz.
+
 
 
