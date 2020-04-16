@@ -140,5 +140,17 @@ Dependiendo de la aplicación de cada dispositivo debe ser seleccionada dicha ve
 
 Como se puede observar en la ilustración anterior, los puertos GPIO pertenecen al bus de datos AHB1, que alcanza una frecuencia superior a 84 Mhz, pero si el puerto está configurado con una función alternativa que se encuentre en el bus APB1, alcanzara una frecuencia de 48 Mhz.
 
+## Pasos para configurar un GPIO:
+
+* Seleccionar el número del pin de un que desea utilizar, este debe ser entre 0 y 15.
+
+* Seleccionar el modo de operación; entrada, salida, análogo, interrupción, etc.
+
+* Seleccionar la activación o desactivación de las resistencias de pull.
+
+* Seleccionar la velocidad a la que trabajara dicho periférico.
+
+* Especificar si el periférico está asociado a una función alternativa.
+
 
 
