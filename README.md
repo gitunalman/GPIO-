@@ -14,6 +14,7 @@ Para llevar a cabo el desarrollo de este documento y su ejemplo es necesario con
 La instalacion y configuracion de IDE se puede ver [Aqui](https://unalman.gitbook.io/estructuras-computacionales/repositorio/instalacion-stm32cubeide)
 
 
+## Datos Importantes 📌
 #### Estructura basica de un GPIO en un microcontrolador SMT32F4 (Similar al STM32L476)
 <img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO1.png" />
 
@@ -163,7 +164,7 @@ Como se puede observar en la ilustración anterior, los puertos GPIO pertenecen 
 * Especificar si el periférico está asociado a una función alternativa.
 
 
-# Ejemplo
+## Ejemplo 🎁
 
 Un ejemplo completo de configuracion y uso de un puerto GPIO de la tarjeta puede verse [Aqui](https://github.com/dacardonave/GPIO-/blob/master/Ejemplo%20GPIO.pdf)
 
