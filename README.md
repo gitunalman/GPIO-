@@ -165,11 +165,11 @@ Como se puede observar en la ilustración anterior, los puertos GPIO pertenecen 
 
 # Ejemplo
 
-A continuación se muestra un ejemplo de configuración y uso de un puerto de una tarjeta SMT34L476 de la marca STM, con la ayuda del STM32CubeIDE.
+Un ejemplo completo de configuracion y uso de un puerto GPIO de la tarjeta puede verse [Aqui](https://github.com/dacardonave/GPIO-/blob/master/Ejemplo%20GPIO.pdf)
 
-Cabe aclarar que los pasos de instalación, configuración y preparación de la interfaz para la creación de un nuevo proyecto no será un tema a tratar en este documento. Se parte de la base de que estos conceptos ya están cubiertos.
+Ademas  se puede descargar el comprimido detodo el ejemplo presentado [Aqui](https://github.com/dacardonave/GPIO-/blob/master/Ejemplo_GPIO.zip)
 
-Siendo así partimos en el STM32CubeIDE desde la creación de un nuevo proyecto:
+
 
 
 
