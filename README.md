@@ -1,8 +1,18 @@
-## Pines de entrada/salida STM32L476
+## Comenzando 🚀
+
+### Pines de entrada/salida STM32L476
 
 El pin de entrada / salida de uso general del microcontrolador STM32 (GPIO) proporciona muchas formas de interactuar con circuitos externos dentro de un marco de aplicación.
 
 En este documento daremos una breve explicación de su uso y configuración.
+
+### Pre-requisitos 📋
+Para llevar a cabo el desarrollo de este documento y su ejemplo es necesario contar con una tarjeta STM32L476 Nucleo-64 y su IDE STM32CubeIDE previamente instalada. Ademas es importante estar familiarizado con la interfaz de desarrollo y saber configurar y comenzar un nuevo proyecto en la misma.
+
+
+### Instalación 🔧
+La instalacion y configuracion de IDE se puede ver [Aqui](https://unalman.gitbook.io/estructuras-computacionales/repositorio/instalacion-stm32cubeide)
+
 
 #### Estructura basica de un GPIO en un microcontrolador SMT32F4 (Similar al STM32L476)
 <img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO1.png" />
@@ -151,6 +161,15 @@ Como se puede observar en la ilustración anterior, los puertos GPIO pertenecen 
 * Seleccionar la velocidad a la que trabajara dicho periférico.
 
 * Especificar si el periférico está asociado a una función alternativa.
+
+
+# Ejemplo
+
+A continuación se muestra un ejemplo de configuración y uso de un puerto de una tarjeta SMT34L476 de la marca STM, con la ayuda del STM32CubeIDE.
+
+Cabe aclarar que los pasos de instalación, configuración y preparación de la interfaz para la creación de un nuevo proyecto no será un tema a tratar en este documento. Se parte de la base de que estos conceptos ya están cubiertos.
+
+Siendo así partimos en el STM32CubeIDE desde la creación de un nuevo proyecto:
 
 
 
