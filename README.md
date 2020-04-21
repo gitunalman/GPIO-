@@ -1,28 +1,14 @@
-## Comenzando 🚀
+## GPIOs 🚀
 
-### Pines de entrada/salida STM32L476
+### Introdución
+LOs GPIOs de uso general de los microcontroladores STM32 proporciona muchas formas de interactuar con circuitos externos dentro de un marco de aplicación.
 
-El pin de entrada / salida de uso general del microcontrolador STM32 (GPIO) proporciona muchas formas de interactuar con circuitos externos dentro de un marco de aplicación.
+En este documento encontrara una breve explicación de su uso y configuración.
 
-En este documento daremos una breve explicación de su uso y configuración.
-
-### Pre-requisitos 📋
-Para llevar a cabo el desarrollo de este documento y su ejemplo es necesario contar con una tarjeta STM32L476 Nucleo-64 y su IDE STM32CubeIDE previamente instalada. Ademas es importante estar familiarizado con la interfaz de desarrollo y saber configurar y comenzar un nuevo proyecto en la misma.
-
-
-### Instalación 🔧
-La instalacion y configuracion de IDE se puede ver [Aqui](https://unalman.gitbook.io/estructuras-computacionales/repositorio/instalacion-stm32cubeide)
-
-
-## Datos Importantes 📌
-#### Estructura basica de un GPIO en un microcontrolador SMT32F4 (Similar al STM32L476)
+## Estrctura basica de los GPIOs 📌
 <img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO1.png" />
 
-En la imagen anterior se muestra la estructura interna de un GPIO. En el recuadro Azul se muestran las posibles configuraciones de entrada, en el rojo las posibles configuraciones de salida y el recuadro verde muestra las configuraciones disponibles para las resistencias de Pull.
-
-
-
-
+En la imagen anterior se muestra la estructura interna de un GPIO. En el recuadro Azul se muestran las posibles configuraciones de entrada, en el rojo las posibles configuraciones de salida y el recuadro verde muestra las configuraciones disponibles para las resistencias de pull-up y pull-down.
 
 #### Glosario:
 Esta sección define las principales siglas y abreviaturas utilizadas para la configuración de las entradas/salidas GPIO.
@@ -48,34 +34,15 @@ Esta sección define las principales siglas y abreviaturas utilizadas para la co
 * IIKG: corriente de fuga
 * IINJ: corriente inyectada
 
-
-#### Abreviación de los registros:
-
-* GPIOx_MODER: 		Registro de modo de puerto GPIO
-* GPIOx_OTYPER:		Registro de tipo de salida GPIO
-* GPIOx_OSPEEDR:		Registro de velocidad de salida GPIO
-* GPIOX_PUPDR:		Registro pull-up/pull-down GPIO
-* GPIOx_IDR:			Registro de datos de entrada del puerto GPIO
-* GPIOx_ODR:		Registro de datos de salida del puerto GPIO
-* GPIOx_BSRR:		Registro Set / Reset GPIO
-* GPIOx_LCKR:		Registro de configuración de bloqueo GPIO
-* GPIOx_AFRL:		Registro bajo de función alternativa
-* GPIOx_AFRH:		Registro alto de función alternativa
-* GPIOx_ASCR:		Registro de control de interruptor analógico de puerto GPIO
-
-
-
 #### Características Principales de los GPIO 
 
-* Estados de salida: Push-Pull, Open Drain + resistencia de Pull o Down, analógico.
+* Estados de salida: Push-Pull, Open Drain y/o resistencia de pull-up o pull-down y analógico.
 * Estados de entrada: flotante, Pull-Up, Pull-Down, analógica.
 * Velocidad de lectura/escritura seleccionable.
 * Bloqueo de GPIO.
 * Selección de funciones alternativas.
 * Tolerantes a 5v.
 * Casi todos los GPIO de la serie STM32 pueden ser configurados como fuente de interrupción externa.
-
-
 
 #### Configuración de entrada digital
 <img src="https://www.intesc.mx/wp-content/uploads/2017/06/GPIO2.png" />
@@ -163,6 +130,12 @@ Como se puede observar en la ilustración anterior, los puertos GPIO pertenecen 
 
 * Especificar si el periférico está asociado a una función alternativa.
 
+### Pre-requisitos 📋
+Para llevar a cabo el desarrollo de este documento y su ejemplo es necesario contar con una tarjeta STM32L476 Nucleo-64 y su IDE STM32CubeIDE previamente instalada. Ademas es importante estar familiarizado con la interfaz de desarrollo y saber configurar y comenzar un nuevo proyecto en la misma.
+
+
+### Instalación 🔧
+La instalacion y configuracion de IDE se puede ver [Aqui](https://unalman.gitbook.io/estructuras-computacionales/repositorio/instalacion-stm32cubeide)
 
 ## Ejemplo 🎁
 
